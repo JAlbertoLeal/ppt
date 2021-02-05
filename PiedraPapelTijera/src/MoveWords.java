@@ -66,7 +66,7 @@ public class MoveWords{
 	    second_i = getIndex(second);
 
 	    if (first_i == second_i) return EMPATE;
-	    
+	    if(first_i == 3 && second_i == 1) {return GANA;}
 	    return (( (first_i +1) % validMoves.length ) == second_i ) ? GANA: PIERDE;
 	}
 	
