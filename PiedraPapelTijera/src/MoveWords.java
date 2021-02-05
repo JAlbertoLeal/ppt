@@ -65,8 +65,11 @@ public class MoveWords{
 	    first_i = getIndex(first);
 	    second_i = getIndex(second);
 	    
-	    if (first_i == second_i) return EMPATE;
-	    if(first_i == 3 && second_i == 1) {return GANA;} // Lagartija perdía contra papel, ahora ya el valor devuelto es "GANA"
+	    if (first_i == second_i) return EMPATE;			 //Al introducir las nuevas opciones hay un fallo en el salto de 3 posiciones 
+	    if(first_i == 4 && second_i == 2) {return GANA;} //correción Spock-Roca perdía contra esta opción.
+	    if(first_i == 3 && second_i == 1) {return GANA;} //Correción Lagartija perdía contra papel, ahora ya el valor devuelto es "GANA"
+	    if(first_i == 2 && second_i == 0) {return GANA;} //Similar con Piedra y tijera
+	    
 	    return (( (first_i +1) % validMoves.length ) == second_i ) ? GANA: PIERDE;
 	}
 	
